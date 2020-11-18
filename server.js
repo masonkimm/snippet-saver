@@ -3,42 +3,7 @@ const exphbs = require('express-handlebars');
 const mysql = require('mysql');
 const app = express();
 const PORT = process.env.PORT || 5000;
-
-const hljss = require('highlight.js')
-
-// const config = require('./config/connectDB')
-// const dbConfig = process.env.NODE_ENV === "production" ? config.heroku : config.local;
-// const db = mysql.createConnection(dbConfig)
-
 const creds = require('./creds.json')
-
-const db = mysql.createConnection({
-  host: creds.host,
-  user: creds.user,
-  password: creds.password,
-  database: creds.database
-})
-
-
-// const db = mysql.createConnection({
-//   host: 'localhost',
-//   user: 'root',
-//   password: 'rlatjdwls',
-//   //add db name after creating db through route.
-//   database: 'snippetsaver',
-// });
-
-db.connect((err) => {
-  if (err) {
-    console.error("error connecting: " + err.stack);
-    return;
-  }
-  console.log("connected as id " + db.threadId);
-  // if (err) {
-  //   throw err;
-  // }
-  // console.log('mySQL DB connected');
-});
 
 //to use express-handlebars
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
@@ -49,10 +14,28 @@ app.use(express.static('public'));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+const config = require('./config/connectDB')
+const dbConfig = process.env.NODE_ENV === "production" ? config.heroku : config.local;
+const db = mysql.createConnection(dbConfig)
+
+// const db = mysql.createConnection({
+//   host: creds.host,
+//   user: creds.user,
+//   password: creds.password,
+//   database: creds.database
+// })
+
+db.connect((err) => {
+  if (err) {
+    console.error("error connecting: " + err.stack);
+    return;
+  }
+  console.log("connected as id " + db.threadId);
+});
+
+
+
 //main page
-// app.get('/', (req, res) => {
-//   res.render('landingPage')
-// });
 app.get('/', (req, res) => {
   let sql = 'CREATE DATABASE IF NOT EXISTS snippetsaver';
   db.query(sql, (err, result) => {

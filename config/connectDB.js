@@ -10,7 +10,7 @@ if(process.env.database){
   }
 } 
 else {
-  var creds = require("../creds.template.json");
+  var creds = require("../creds.json");
   local = {
     host: creds.host,
     user: creds.user,
