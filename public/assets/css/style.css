@@ -1,0 +1,80 @@
+/* Global */
+
+body {
+  background: rgba(210, 213, 216, 0.1);
+  font-family: 'Montserrat', sans-serif;
+  color: white;
+  letter-spacing: 0.5px;
+  margin: 2%;
+
+  background-image: url('https://images.unsplash.com/photo-1535905557558-afc4877a26fc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1834&q=80');
+  height: 100%;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow-x: hidden;
+}
+
+.jumbotron {
+  background: rgba(47, 48, 49, 0.7);
+  border: 1px solid white;
+  /* background-color: rgba(0, 0, 0, 0.1); */
+}
+
+/* Landing Page Contents */
+#landingPage {
+  margin-top: 20rem;
+}
+
+.btn {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 18px;
+}
+
+.btn-info {
+  background-color: lightslategrey;
+}
+
+/* Main Page Contents */
+
+#mainHeading {
+  border: none;
+}
+
+#mainHeading hr {
+  height: 0.5px;
+  background-color: rosybrown;
+  margin-top: 3rem;
+}
+
+#mainBody {
+  margin-top: -7rem;
+  border: none;
+}
+.list-group-item {
+  color: white;
+  background-color: rgba(25, 52, 139, 0.1);
+  border: 1px solid rosybrown;
+}
+#mainContent,
+#selectedContent {
+  color: rgb(206, 204, 204);
+  display: none;
+  border: 1px solid rosybrown;
+  background-color: rgba(25, 52, 139, 0.1)
+  /* background-color: rgb(85, 83, 83); */
+}
+#mainContent,
+#selectedContent, pre {
+  color: rgb(206, 204, 204);
+}
+
+span {
+  color: rgb(241, 234, 234);
+}
+
+
+
+

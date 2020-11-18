@@ -1,0 +1,75 @@
+<div class="container-fluid">
+  <div class="jumbotron" id="mainHeading">
+    <h1>Snippet Saver</h1>
+    <h4>Library for code snippets</h4>
+    <button class="btn btn-info" id="mainBtn">Add new Snippet </button>
+    <hr>
+  </div>
+
+  <div class="jumbotron" id="mainBody">
+    <div class="row">
+      <div class="col-sm-3" id="mainList">
+        <div class="container">
+          <h3>Saved List</h3>
+          <ul class="list-group">
+            {{#each snippets}}
+            <li class="list-group-item" value={{id}}><i class="devicon-{{language}}-plain mr-3"></i>{{title}}</li>
+            {{/each}}
+          </ul>
+        </div>
+
+      </div>
+      <div class="col-sm-8" id="mainContent">
+        {{!-- create createNewForm --}}
+        <form action="/" method="POST" class="form-group" id="newForm">
+          <label for="">Title:</label>
+          <input type="text" class="form-control" id="snippetTitle">
+          <label for="">Language:</label>
+          <select class="form-control" name="" id="snippetLanguage">
+            <option value="">Select One</option>
+            <option value="">html5</option>
+            <option value="">javascript</option>
+            <option value="">css3</option>
+          </select>
+          <label for="">Description:</label>
+          <input type="text" class="form-control" id="snippetDesc">
+          <label for="">Snippet:</label>
+          <textarea class="form-control" id="snippetBody" name="" id="" cols="30" rows="10"></textarea>
+        </form>
+
+
+
+        <a href="/main" class="btn btn-danger float-right">Cancel</a>
+        <button class="btn btn-info float-right" id="saveNewSnippet">Save</button>
+        <button class="btn btn-info float-right" id="saveUpdatedSnippet" style="display: none;">Save Update</button>
+
+
+      </div>
+      <div class="col-sm-8" id="selectedContent">
+        <form action="" class="form-group">
+          <h3 style="display: none">ID: <span id="selectedID"></span></h3>
+          <h3>Title: <span id="selectedTitle"></span></h3>
+          <h3>Language: <span id="selectedLanguage"></span>
+
+            <div class="" id="selectedUpdateLanguage" style='display: none'>
+              <label for="">Language:</label>
+              <select class="form-control" name="" id="updateLanguageList">
+                <option value="">Select One</option>
+                <option value="">HTML</option>
+                <option value="">JavaScript</option>
+                <option value="">CSS</option>
+              </select>
+            </div>
+          </h3>
+          <h3>Description: <span id="selectedDesc"></span></h3>
+          <pre> <h3>Snippet</h3><code id="selectedSnippet"></code></pre>
+          {{!-- <h3>Snippet: <span id="selectedSnippet"></span></h3> --}}
+
+
+        </form>
+        <button class="btn btn-danger float-right" id="deleteBtn">Delete</button>
+        <button class="btn btn-warning float-right" id="updateBtn">Update</button>
+      </div>
+    </div>
+  </div>
+</div>
