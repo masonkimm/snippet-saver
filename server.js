@@ -18,13 +18,6 @@ const config = require('./config/connectDB')
 const dbConfig = process.env.NODE_ENV === "production" ? config.heroku : config.local;
 const db = mysql.createConnection(dbConfig)
 
-// const db = mysql.createConnection({
-//   host: creds.host,
-//   user: creds.user,
-//   password: creds.password,
-//   database: creds.database
-// })
-
 db.connect((err) => {
   if (err) {
     console.error("error connecting: " + err.stack);
@@ -32,8 +25,6 @@ db.connect((err) => {
   }
   console.log("connected as id " + db.threadId);
 });
-
-
 
 //main page
 app.get('/', (req, res) => {
