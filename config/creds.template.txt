@@ -4,7 +4,6 @@
 3) fill in the missing blanks
 */
 
-
 module.exports ={
   db: {
     host: "localhost",
