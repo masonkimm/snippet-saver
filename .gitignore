@@ -1,6 +1,5 @@
 
 node_modules
-
 creds*.json
 !creds.template.json
-creds.txt
+creds.js

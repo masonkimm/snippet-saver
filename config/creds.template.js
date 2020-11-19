@@ -1,0 +1,23 @@
+/*
+1) create creds.js file under 'config' directory
+2) copy and paste the template below over to the newly created creds.js
+3) fill in the missing blanks
+*/
+
+
+module.exports ={
+  db: {
+    host: "localhost",
+    port: 3306,
+    user: "root",
+    password: "",
+    database: "snippetSaver",
+  },
+  heroku:{
+    host: "",
+    port: 3306,
+    user: "",
+    password: "",
+    database: "",
+  }
+}
