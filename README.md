@@ -14,10 +14,7 @@ Utilized:
 * CSS
 * Bootstrap
 * MySQL
-* NPM Packagages 
- ** Express
- ** Express-Handlebars
- ** MySQL
+* NPM Packagages [Express, Express-Handlebars, MySQL]
 * Heroku
 
 
